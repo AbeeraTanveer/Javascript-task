@@ -21,11 +21,9 @@ function Add() {
     } else {
         let li = document.createElement("li");
         li.innerHTML = `${input.value} <i class="fa-solid fa-trash"></i>`;
-        listContainer.appendChild(li) ;
+        li.querySelector("i").addEventListener("click", () => li.remove());
+        listContainer.appendChild(li);
         input.value = "";
-        listContainer.querySelector("i").addEventListener("click" , remove);
-        function remove() {
-            listContainer.remove()
         }
     }
-}
+
